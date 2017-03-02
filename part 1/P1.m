@@ -19,10 +19,9 @@ drawnow;
 for iter= 1:T
     % Compute the node pairs with direct connections:
     cla
-    hold on
-    L = ConnectedList2(N,pos,W);
+    L = ConnectedList(N,pos,W);
     % Compute the no. of connected node pairs of time instant iter:
-    % results(iter)= AverageConnectedNodePairs(N,L);
+    results(iter)= AverageConnectedNodePairs(N,L);
     % Update node coordinates and speed values:
     [pos,vel]= UpdateCoordinates(pos,vel,delta);
     % Visualize updated node positions:
