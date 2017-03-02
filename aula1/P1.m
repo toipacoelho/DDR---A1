@@ -16,11 +16,13 @@ plot(pos(:,1),pos(:,2),'o','MarkerEdgeColor','b','MarkerFaceColor','b')
 axis([0 300 0 200])
 drawnow;
 % Simulation cycle running all time instants iter:
-for iter= 1:0
+for iter= 1:T
     % Compute the node pairs with direct connections:
-    L= ConnectedList(N,pos,W);
+    cla
+    hold on
+    L = ConnectedList2(N,pos,W);
     % Compute the no. of connected node pairs of time instant iter:
-    results(iter)= AverageConnectedNodePairs(N,L);
+    % results(iter)= AverageConnectedNodePairs(N,L);
     % Update node coordinates and speed values:
     [pos,vel]= UpdateCoordinates(pos,vel,delta);
     % Visualize updated node positions:
@@ -32,4 +34,4 @@ end
 figure(2)
 plot((1:T)',results')
 % Compute the final result: 
-FinalResult= average(results)
+FinalResult = mean(results)
