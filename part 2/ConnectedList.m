@@ -9,6 +9,5 @@ function L= ConnectedList(N,pos,W,No,npos)
             end
         end
     end
-    L
 end
 
