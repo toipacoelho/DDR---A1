@@ -25,7 +25,7 @@ for iter= 1:T
     cla
     L = ConnectedList(N,pos,W,No,npos);
     % Compute the no. of connected node pairs of time instant iter:
-    results(iter)= AverageConnectedNodePairs(N,L);
+    results(iter)= AverageConnectedNodePairs(N,L,No);
     % Update node coordinates and speed values:
     [pos,vel]= UpdateCoordinates(pos,vel,delta);
     % Visualize updated node positions:
