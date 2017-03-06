@@ -1,5 +1,5 @@
 function o= AverageConnectedNodePairs(N,L,No)
-    labels = [ones(1,N) zeros(1, No)]
+    labels = [ones(1,N) zeros(1, No)];
     r=true;
     while r
         r=false;
@@ -10,5 +10,5 @@ function o= AverageConnectedNodePairs(N,L,No)
             end
         end
     end
-    o=(sum(labels==1)-No)/N*100
+    o=(sum(labels==1)-No)/N*100;
 end
