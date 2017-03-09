@@ -12,6 +12,7 @@ results= zeros(1,T);% Initialization of the results array
 % Generation of initial coordinates, speed and direction of mobile nodes:
 [pos,vel, npos]= InitialRandom(N,S,No);
 % Visualize node positions:
+%{
 figure(1)
 hold on
 plot(pos(:,1),pos(:,2),'o','MarkerEdgeColor','b','MarkerFaceColor','b')
@@ -19,6 +20,7 @@ plot(npos(:,1),npos(:,2),'s','MarkerEdgeColor','b','MarkerFaceColor','b','Marker
 hold off
 axis([0 300 0 200])
 drawnow;
+%}
 % Simulation cycle running all time instants iter:
 for iter= 1:T
     % Compute the node pairs with direct connections:
@@ -29,15 +31,20 @@ for iter= 1:T
     % Update node coordinates and speed values:
     [pos,vel]= UpdateCoordinates(pos,vel,delta);
     % Visualize updated node positions:
+    %{
     hold on
     plot(pos(:,1),pos(:,2),'o','MarkerEdgeColor','b','MarkerFaceColor','b')
     plot(npos(:,1),npos(:,2),'s','MarkerEdgeColor','b','MarkerFaceColor','b','MarkerSize',15)
     hold off
     axis([0 300 0 200])
     drawnow;
+    %}
 end
 % Plot in a different window the simulation results:
 figure(2)
+hold on
 plot((1:T)',results')
+cumavg = cumsum(results)./(1:T);
+plot((1:T)',cumavg', 'r')
 % Compute the final result: 
 FinalResult = mean(results)
