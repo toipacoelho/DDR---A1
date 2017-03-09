@@ -24,7 +24,7 @@ drawnow;
 % Simulation cycle running all time instants iter:
 for iter= 1:T
     % Compute the node pairs with direct connections:
-    cla
+    %cla
     L = ConnectedList(N,pos,W,No,npos);
     % Compute the no. of connected node pairs of time instant iter:
     results(iter)= AverageConnectedNodePairs(N,L,No);
@@ -41,10 +41,12 @@ for iter= 1:T
     %}
 end
 % Plot in a different window the simulation results:
+%{
 figure(2)
 hold on
 plot((1:T)',results')
 cumavg = cumsum(results)./(1:T);
 plot((1:T)',cumavg', 'r')
+%}
 % Compute the final result: 
 FinalResult = mean(results)
