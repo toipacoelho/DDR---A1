@@ -1,7 +1,7 @@
 %Parameters initialization:
-N= 100;              % Number of mobile nodes
+N= 120;              % Number of mobile nodes
 W= 40;              % Radio range (in meters)
-S= 3;               % Maximum speed (in Km/h)
+S= 5;               % Maximum speed (in Km/h)
 delta= 1;           % Difference between consecutive time instants (in seconds)
 T= 3600;            % No. of time instants of the simulation
 
